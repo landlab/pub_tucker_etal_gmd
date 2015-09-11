@@ -14,8 +14,8 @@ import time
 import matplotlib
 from numpy import where
 from landlab import RasterModelGrid
-from landlab.components.cellular_automata.landlab_ca import Transition, CAPlotter
-from landlab.components.cellular_automata.raster_lca import RasterLCA
+from landlab.components.cellular_automata.celllab_cts import Transition, CAPlotter
+from landlab.components.cellular_automata.raster_cts import RasterCTS
 
 
 def setup_transition_list():
@@ -104,7 +104,7 @@ def main():
     node_state_grid[mg.closed_boundary_nodes] = 0
     
     # Create the CA model
-    ca = RasterLCA(mg, ns_dict, xn_list, node_state_grid)
+    ca = RasterCTS(mg, ns_dict, xn_list, node_state_grid)
     
     grain = '#5F594D'
     fluid = '#D0E4F2'
